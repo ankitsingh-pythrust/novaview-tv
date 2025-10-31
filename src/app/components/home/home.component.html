@@ -1,0 +1,294 @@
+<!-- Home Page -->
+<div style="font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial; color:#1a1a1a; line-height:1.6;">
+  <!-- Header (100px tall, brand + nav only, no buttons) -->
+  <header style="background:#0a3d62;color:#f8fafc;height:100px;padding:0 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;">
+    <div style="display:flex;align-items:center;gap:24px;white-space:nowrap;">
+      <span style="font-weight:800;letter-spacing:.6px;font-size:20px;font-family: 'Segoe UI', Roboto, Helvetica, Arial;">NOVAVIEW TV</span>
+      <nav class="desktop-nav" style="display:flex;gap:16px;align-items:center;white-space:nowrap;">
+        <a href="#features" (click)="$event.preventDefault(); scrollTo('features')" style="text-decoration:none;color:#e6f2fa;font-weight:600;">Features</a>
+        <a href="#specs" (click)="$event.preventDefault(); scrollTo('specs')" style="text-decoration:none;color:#e6f2fa;font-weight:600;">Specs</a>
+        <a href="#reviews" (click)="$event.preventDefault(); scrollTo('reviews')" style="text-decoration:none;color:#e6f2fa;font-weight:600;">Reviews</a>
+        <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="text-decoration:none;color:#e6f2fa;font-weight:600;">Plans</a>
+        <a href="#support" (click)="$event.preventDefault(); scrollTo('support')" style="text-decoration:none;color:#e6f2fa;font-weight:600;">Support</a>
+      </nav>
+    </div>
+    <a href="#" class="burger" (click)="$event.preventDefault(); toggleMobileMenu()" aria-label="Toggle menu" style="display:none;color:#f8fafc;text-decoration:none;font-size:26px;line-height:1;">☰</a>
+  </header>
+
+  <!-- Mobile menu (card) -->
+  <div *ngIf="mobileMenuOpen" style="position:sticky;top:0;z-index:999;">
+    <mat-card style="margin:0;border-radius:0;background:#ffffff;">
+      <div style="display:flex;flex-direction:column;gap:10px;padding:8px 8px 12px 8px;">
+        <a href="#features" (click)="$event.preventDefault(); scrollTo('features'); closeMobileMenu()" style="text-decoration:none;color:#0a3d62;font-weight:700;">Features</a>
+        <a href="#specs" (click)="$event.preventDefault(); scrollTo('specs'); closeMobileMenu()" style="text-decoration:none;color:#0a3d62;font-weight:700;">Specs</a>
+        <a href="#reviews" (click)="$event.preventDefault(); scrollTo('reviews'); closeMobileMenu()" style="text-decoration:none;color:#0a3d62;font-weight:700;">Reviews</a>
+        <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans'); closeMobileMenu()" style="text-decoration:none;color:#0a3d62;font-weight:700;">Plans</a>
+        <a href="#support" (click)="$event.preventDefault(); scrollTo('support'); closeMobileMenu()" style="text-decoration:none;color:#0a3d62;font-weight:700;">Support</a>
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Hero -->
+  <section id="hero" style="background:linear-gradient(180deg,#f1f6fb,#ffffff);padding:56px 16px;">
+    <mat-card style="max-width:1100px;margin:0 auto;padding:32px;border-radius:16px;box-shadow:0 10px 30px rgba(2,6,23,0.08);">
+      <div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;">
+        <div style="flex:1 1 420px;min-width:280px;">
+          <h1 style="margin:0 0 10px 0;font-size:40px;line-height:1.2;color:#0a3d62;">Meet NovaView Q7 — 4K QLED, made by us, priced for you</h1>
+          <p style="margin:0 0 18px 0;font-size:16px;color:#334155;">Stunning color, deep contrast, and gamer-fast performance. Built by our team and shipped directly to your door.</p>
+          <ul style="margin:0 0 20px 18px;color:#334155;">
+            <li>4K QLED panel with HDR10+</li>
+            <li>120Hz Game Mode with HDMI 2.1, VRR, and ALLM</li>
+            <li>3-year warranty and 30-day returns</li>
+          </ul>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+            <button mat-raised-button color="primary" style="background:#0a3d62;color:#ffffff;height:44px;border-radius:8px;font-weight:700;padding:0 18px;" (click)="scrollTo('plans')">Shop Models</button>
+            <button mat-stroked-button style="height:44px;border-radius:8px;border-color:#94a3b8;color:#0a3d62;padding:0 18px;" (click)="scrollTo('specs')">See Full Specs</button>
+          </div>
+          <p style="margin:10px 0 0 0;font-size:12px;color:#64748b;">Free shipping in 48 hours to contiguous U.S. Returns are hassle-free within 30 days.</p>
+        </div>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- About -->
+  <section id="about" style="padding:48px 16px;background:#ffffff;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="margin:0 0 8px 0;font-size:28px;color:#0a3d62;">Built by our engineers. Sold directly to you.</h2>
+      <p style="margin:0 0 16px 0;color:#475569;">We design, assemble, and test every NovaView Q7 in-house, then ship directly—cutting retail markups without cutting corners.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;">
+        <mat-card style="flex:1 1 320px;min-width:260px;border-radius:12px;padding:20px;border:1px solid #e2e8f0;">
+          <ul style="margin:0;padding-left:18px;color:#334155;">
+            <li>Tight quality control at every step</li>
+            <li>Savings passed on from factory to living room</li>
+            <li>US-based service and parts for long-term support</li>
+          </ul>
+          <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
+            <button mat-stroked-button style="border-color:#cbd5e1;color:#0a3d62;">How We Build</button>
+            <button mat-raised-button color="accent" style="background:#ff7a00;color:#0b1a0f;font-weight:700;">Our Warranty</button>
+          </div>
+        </mat-card>
+      </div>
+      <p style="margin:10px 0 0 0;font-size:12px;color:#64748b;">Every unit is burn-in tested before shipping. Replacement parts and panels are stocked domestically.</p>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why" style="padding:48px 16px;background:#f8fafc;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="margin:0 0 8px 0;font-size:28px;color:#0a3d62;">Premium picture without the premium markup</h2>
+      <p style="margin:0 0 16px 0;color:#475569;">QLED brilliance, fast gaming features, and a warranty that outlasts most brands.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+        <mat-card class="hover-card" style="border-radius:12px;border:1px solid #e2e8f0;padding:16px;">Vivid color: 97% DCI-P3 coverage for lifelike hues</mat-card>
+        <mat-card class="hover-card" style="border-radius:12px;border:1px solid #e2e8f0;padding:16px;">Deeper blacks: full-array local dimming for punchy contrast</mat-card>
+        <mat-card class="hover-card" style="border-radius:12px;border:1px solid #e2e8f0;padding:16px;">Ready for next-gen consoles: 120Hz + HDMI 2.1</mat-card>
+        <mat-card class="hover-card" style="border-radius:12px;border:1px solid #e2e8f0;padding:16px;">Manufacturer-direct support: talk to real technicians</mat-card>
+        <mat-card class="hover-card" style="border-radius:12px;border:1px solid #e2e8f0;padding:16px;">Energy-smart: adaptive brightness lowers power use</mat-card>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#cbd5e1;color:#0a3d62;" (click)="scrollTo('why')">Compare to Big-Box Brands</button>
+        <button mat-raised-button color="accent" style="background:#ff7a00;color:#0b1a0f;font-weight:700;" (click)="scrollTo('reviews')">Read Customer Reviews</button>
+      </div>
+      <p style="margin:10px 0 0 0;font-size:12px;color:#64748b;">Independent lab calibration presets are included: Film, Game, Sports, and Creator modes.</p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="padding:48px 16px;background:#ffffff;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="margin:0 0 8px 0;font-size:28px;color:#0a3d62;">What you'll love on day one</h2>
+      <p style="margin:0 0 24px 0;color:#475569;">Engineered for movies, sports, and competitive gaming—without compromises.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+        <mat-card class="feature-card" style="border-radius:12px;padding:18px;border:1px solid #e2e8f0;"><div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">Quantum Color</div><div style="color:#334155;">Billions of vibrant shades with quantum dots for lifelike, saturated images.</div></mat-card>
+        <mat-card class="feature-card" style="border-radius:12px;padding:18px;border:1px solid #e2e8f0;"><div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">Full-Array Dimming</div><div style="color:#334155;">Precisely controlled backlight zones deliver deeper blacks and brighter highlights.</div></mat-card>
+        <mat-card class="feature-card" style="border-radius:12px;padding:18px;border:1px solid #e2e8f0;"><div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">120Hz Game Mode</div><div style="color:#334155;">Smooth motion, ultra-low latency, VRR up to 120Hz for tear-free gameplay.</div></mat-card>
+        <mat-card class="feature-card" style="border-radius:12px;padding:18px;border:1px solid #e2e8f0;"><div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">HDMI 2.1 + eARC</div><div style="color:#334155;">Two HDMI 2.1 ports for 4K120 and a dedicated eARC port for high-bitrate audio.</div></mat-card>
+        <mat-card class="feature-card" style="border-radius:12px;padding:18px;border:1px solid #e2e8f0;"><div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">Smart Streaming</div><div style="color:#334155;">Built-in streaming with major apps, voice control, and personalized content rows.</div></mat-card>
+        <mat-card class="feature-card" style="border-radius:12px;padding:18px;border:1px solid #e2e8f0;"><div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">Eye Comfort</div><div style="color:#334155;">Low blue light and ambient light sensor for comfortable long-watch sessions.</div></mat-card>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#cbd5e1;color:#0a3d62;" (click)="scrollTo('features')">Explore Picture Modes</button>
+        <button mat-raised-button color="accent" style="background:#ff7a00;color:#0b1a0f;font-weight:700;" (click)="scrollTo('specs')">See Gaming Features</button>
+      </div>
+      <p style="margin:10px 0 0 0;font-size:12px;color:#64748b;">Game Mode auto-activates via ALLM when a console is detected.</p>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section id="specs" style="padding:48px 16px;background:#f8fafc;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="margin:0 0 8px 0;font-size:28px;color:#0a3d62;">The numbers that make the difference</h2>
+      <p style="margin:0 0 16px 0;color:#475569;">Powerful processing, premium panel, and the ports you actually need.</p>
+      <mat-card style="border-radius:12px;border:1px solid #e2e8f0;padding:18px;background:#ffffff;">
+        <ul style="margin:0;padding-left:18px;color:#334155;">
+          <li>Panel: 4K (3840×2160) QLED with full-array local dimming</li>
+          <li>HDR: HDR10, HDR10+, HLG; Filmmaker and Creator picture modes</li>
+          <li>Refresh: 120Hz native; VRR 48–120Hz; ALLM auto game detection</li>
+          <li>Processor: NovaCore XR video engine with AI upscaling</li>
+          <li>Audio: 2.1-channel speakers, Dolby Atmos passthrough via eARC</li>
+          <li>Smart: Built-in streaming apps, voice assistant ready, Chromecast/AirPlay compatible</li>
+          <li>Connectivity: 2× HDMI 2.1 (4K120), 2× HDMI 2.0, eARC, USB 3.0, Ethernet</li>
+          <li>Wireless: Wi‑Fi 6, Bluetooth 5.3 for headphones and gamepads</li>
+          <li>Power: Energy Star compliant; auto brightness with ambient sensor</li>
+        </ul>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
+          <button mat-stroked-button style="border-color:#cbd5e1;color:#0a3d62;">Download Spec Sheet</button>
+          <button mat-raised-button color="accent" style="background:#ff7a00;color:#0b1a0f;font-weight:700;">Compatibility Guide</button>
+        </div>
+        <p style="margin:10px 0 0 0;font-size:12px;color:#64748b;">Compatibility tested with PlayStation 5, Xbox Series X, Apple TV 4K, and popular soundbars via eARC.</p>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" style="padding:48px 16px;background:#ffffff;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="margin:0 0 8px 0;font-size:28px;color:#0a3d62;">Looks as good off as it does on</h2>
+      <p style="margin:0 0 16px 0;color:#475569;">Slim bezels, clean cable management, and a minimalist stand fit any room.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;">
+        <mat-card class="feature-card" style="border-radius:12px;border:1px solid #e2e8f0;padding:18px;">
+          <div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">Living Room Cinema</div>
+          <div style="color:#334155;">A bright, punchy picture that stands up to daylight viewing.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px;border:1px solid #e2e8f0;padding:18px;">
+          <div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">Game Night Ready</div>
+          <div style="color:#334155;">Low-latency 4K120 brings competitive play to the big screen.</div>
+        </mat-card>
+        <mat-card class="feature-card" style="border-radius:12px;border:1px solid #e2e8f0;padding:18px;">
+          <div style="font-weight:700;color:#0a3d62;margin-bottom:6px;">Design That Disappears</div>
+          <div style="color:#334155;">Slim silhouette and tidy cable channels keep attention on the story.</div>
+        </mat-card>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#cbd5e1;color:#0a3d62;">See Wall Mount Guide</button>
+        <button mat-raised-button color="accent" style="background:#ff7a00;color:#0b1a0f;font-weight:700;">Room Setup Tips</button>
+      </div>
+      <p style="margin:10px 0 0 0;font-size:12px;color:#64748b;">VESA mount compatible: 300×300 (55"), 400×300 (65"), 400×400 (75").</p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" style="padding:48px 16px;background:#f8fafc;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="margin:0 0 8px 0;font-size:28px;color:#0a3d62;">Loved by movie fans and gamers alike</h2>
+      <p style="margin:0 0 24px 0;color:#475569;">Real feedback from recent NovaView owners.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+        <mat-card style="border-radius:12px;border:1px solid #e2e8f0;padding:16px;background:#ffffff;">
+          <p style="margin:0 0 6px 0;color:#0a3d62;font-weight:700;">Riley P. — <span style="color:#64748b;font-weight:600;">Verified Buyer</span></p>
+          <p style="margin:0;color:#334155;">“Picture is fantastic right out of the box. Game Mode at 120Hz is buttery smooth and input lag is barely noticeable.”</p>
+        </mat-card>
+        <mat-card style="border-radius:12px;border:1px solid #e2e8f0;padding:16px;background:#ffffff;">
+          <p style="margin:0 0 6px 0;color:#0a3d62;font-weight:700;">Kayla M. — <span style="color:#64748b;font-weight:600;">Home Theater Enthusiast</span></p>
+          <p style="margin:0;color:#334155;">“Color accuracy and local dimming punch way above the price. eARC worked instantly with my Atmos soundbar.”</p>
+        </mat-card>
+        <mat-card style="border-radius:12px;border:1px solid #e2e8f0;padding:16px;background:#ffffff;">
+          <p style="margin:0 0 6px 0;color:#0a3d62;font-weight:700;">TechGrid Weekly — <span style="color:#64748b;font-weight:600;">Reviewer</span></p>
+          <p style="margin:0;color:#334155;">“Manufacturer-direct value with premium features. A compelling 4K QLED for gamers and cinephiles on a budget.”</p>
+        </mat-card>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+        <button mat-stroked-button style="border-color:#cbd5e1;color:#0a3d62;">Read More Reviews</button>
+        <button mat-raised-button color="accent" style="background:#ff7a00;color:#0b1a0f;font-weight:700;">See Press Mentions</button>
+      </div>
+      <p style="margin:10px 0 0 0;font-size:12px;color:#64748b;">Reviews are verified; minor edits for clarity and length.</p>
+    </div>
+  </section>
+
+  <!-- Plans / Pricing -->
+  <section id="plans" style="padding:48px 16px;background:#ffffff;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="margin:0 0 8px 0;font-size:28px;color:#0a3d62;">Choose your NovaView Q7</h2>
+      <p style="margin:0 0 24px 0;color:#475569;">Same great panel and processor across sizes—pick the perfect fit for your room.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;">
+        <mat-card class="plan-card" style="flex:1 1 300px;min-width:280px;border:1px solid #e2e8f0;border-radius:14px;padding:20px;background:#ffffff;">
+          <div style="font-size:18px;color:#0a3d62;font-weight:700;">Q7 — 55-inch</div>
+          <div style="margin:6px 0 14px 0;font-size:28px;color:#0a3d62;">$699</div>
+          <ul style="padding-left:18px;margin:0 0 16px 0;color:#334155;">
+            <li>4K QLED • HDR10+ • 120Hz Game Mode</li>
+            <li>2× HDMI 2.1 + eARC</li>
+            <li>Ideal viewing distance: 6–8 ft</li>
+          </ul>
+          <button mat-stroked-button style="width:100%;border-color:#cbd5e1;color:#0a3d62;height:42px;">Buy 55-inch</button>
+        </mat-card>
+        <mat-card class="plan-card" style="flex:1 1 300px;min-width:280px;border:2px solid #0a3d62;border-radius:16px;padding:22px;background:#0a3d62;color:#f8fafc;transform:translateY(-4px);box-shadow:0 12px 30px rgba(2,6,23,0.15);">
+          <div style="font-size:18px;color:#f8fafc;font-weight:800;">Q7 — 65-inch</div>
+          <div style="margin:6px 0 14px 0;font-size:28px;color:#f8fafc;">$899</div>
+          <ul style="padding-left:18px;margin:0 0 16px 0;color:#e2e8f0;">
+            <li>4K QLED • HDR10+ • 120Hz Game Mode</li>
+            <li>More dimming zones for deeper contrast</li>
+            <li>Ideal viewing distance: 7–10 ft</li>
+          </ul>
+          <button mat-raised-button color="accent" style="width:100%;height:44px;background:#ff7a00;color:#0b1a0f;font-weight:800;">Buy 65-inch</button>
+        </mat-card>
+        <mat-card class="plan-card" style="flex:1 1 300px;min-width:280px;border:1px solid #e2e8f0;border-radius:14px;padding:20px;background:#ffffff;">
+          <div style="font-size:18px;color:#0a3d62;font-weight:700;">Q7 — 75-inch</div>
+          <div style="margin:6px 0 14px 0;font-size:28px;color:#0a3d62;">$1,299</div>
+          <ul style="padding-left:18px;margin:0 0 16px 0;color:#334155;">
+            <li>Cinematic scale with high peak brightness</li>
+            <li>4K QLED • HDR10+ • 120Hz Game Mode</li>
+            <li>Ideal viewing distance: 9–12 ft</li>
+          </ul>
+          <button mat-stroked-button style="width:100%;border-color:#cbd5e1;color:#0a3d62;height:42px;">Buy 75-inch</button>
+        </mat-card>
+      </div>
+      <p style="margin:12px 0 0 0;font-size:12px;color:#64748b;">Sales tax calculated at checkout. Limited-time launch pricing shown.</p>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section id="support" style="padding:48px 16px;background:#f8fafc;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="margin:0 0 8px 0;font-size:28px;color:#0a3d62;">We're with you from checkout to movie night</h2>
+      <p style="margin:0 0 16px 0;color:#475569;">Fast delivery, straightforward returns, and responsive human support.</p>
+      <mat-card style="border-radius:12px;border:1px solid #e2e8f0;padding:18px;background:#ffffff;">
+        <ul style="margin:0;padding-left:18px;color:#334155;">
+          <li>Shipping: Leaves our warehouse within 48 hours (Mon–Fri)</li>
+          <li>Returns: 30-day, no-restocking-fee returns</li>
+          <li>Warranty: 3-year limited warranty with advance exchange options</li>
+          <li>Install: Wall-mount guide and live setup assistance available</li>
+          <li>Payment: Credit/debit, PayPal, and financing at checkout</li>
+        </ul>
+        <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;">
+          <button mat-raised-button color="primary" style="background:#0a3d62;color:#ffffff;font-weight:700;">Start a Live Chat</button>
+          <button mat-stroked-button style="border-color:#cbd5e1;color:#0a3d62;">Register Your TV</button>
+        </div>
+        <p style="margin:10px 0 0 0;font-size:12px;color:#64748b;">Questions? Email support&#64;novaview.tv or call 1-800-507-6682 Mon–Sat, 9am–7pm CT.</p>
+      </mat-card>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#0a3d62;color:#e2e8f0;">
+    <div style="max-width:1100px;margin:0 auto;padding:28px 16px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start;justify-content:space-between;">
+      <div style="min-width:220px;">
+        <div style="font-weight:800;margin-bottom:6px;">NOVAVIEW TV</div>
+        <div style="font-size:13px;color:#cfe6f4;">NovaView designs and builds premium televisions sold directly to you—delivering better performance, fair pricing, and real support.</div>
+      </div>
+      <div style="display:flex;gap:32px;flex-wrap:wrap;">
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:#f1f5f9;">Product</div>
+          <a href="#plans" (click)="$event.preventDefault(); scrollTo('plans')" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">Models & Pricing</a>
+          <a href="#specs" (click)="$event.preventDefault(); scrollTo('specs')" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">Specifications</a>
+          <a href="#why" (click)="$event.preventDefault(); scrollTo('why')" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">Compare to Big-Box Brands</a>
+          <a href="#support" (click)="$event.preventDefault(); scrollTo('support')" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">User Manual</a>
+          <a href="#gallery" (click)="$event.preventDefault(); scrollTo('gallery')" style="display:block;text-decoration:none;color:#cfe6f4;">Wall Mount Guide</a>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:#f1f5f9;">Company</div>
+          <a href="#about" (click)="$event.preventDefault(); scrollTo('about')" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">About NovaView</a>
+          <a href="#" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">Careers</a>
+          <a href="#support" (click)="$event.preventDefault(); scrollTo('support')" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">Contact</a>
+          <a href="#" style="display:block;text-decoration:none;color:#cfe6f4;">Press</a>
+        </div>
+        <div>
+          <div style="font-weight:700;margin-bottom:8px;color:#f1f5f9;">Legal</div>
+          <a href="#support" (click)="$event.preventDefault(); scrollTo('support')" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">Warranty</a>
+          <a href="#" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">Privacy Policy</a>
+          <a href="#" style="display:block;text-decoration:none;color:#cfe6f4;margin-bottom:6px;">Terms of Sale</a>
+          <a href="#support" (click)="$event.preventDefault(); scrollTo('support')" style="display:block;text-decoration:none;color:#cfe6f4;">Returns & Refunds</a>
+        </div>
+      </div>
+    </div>
+    <mat-divider style="border-top-color:#0b2e49;"></mat-divider>
+    <div style="max-width:1100px;margin:0 auto;padding:14px 16px;font-size:12px;color:#cfe6f4;">© 2025 novaview-tv. All rights reserved.</div>
+  </footer>
+</div>
