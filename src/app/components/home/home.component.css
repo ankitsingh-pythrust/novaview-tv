@@ -1,0 +1,8 @@
+/* Header responsiveness */
+.burger{display:none}
+@media (max-width: 768px){.desktop-nav{display:none!important}.burger{display:block!important}}
+
+/* Cards and hovers */
+mat-card{max-width:100%}
+.feature-card,.hover-card,.plan-card{transition:transform 160ms ease, box-shadow 160ms ease;will-change:transform}
+.feature-card:hover,.feature-card:focus-within,.hover-card:hover,.hover-card:focus-within,.plan-card:hover,.plan-card:focus-within{transform:translateY(-2px) scale(1.01);box-shadow:0 10px 26px rgba(2,6,23,.16);outline:none}
